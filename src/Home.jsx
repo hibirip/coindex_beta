@@ -5,6 +5,11 @@ import useCryptoData from './hooks/useCryptoData';
 import CoinTable from './components/CoinTable';
 import { supabase } from './lib/supabase';
 
+// API URL 환경변수 기반 설정
+const getApiUrl = () => {
+  return import.meta.env.VITE_API_URL || 'http://localhost:4000';
+};
+
 function NewsPreview() {
   const [news, setNews] = useState([]);
   const [loading, setLoading] = useState(true);
@@ -12,7 +17,7 @@ function NewsPreview() {
 
   const translateText = async (text, id) => {
     try {
-      const res = await fetch('/api/translate', {
+      const res = await fetch(`${getApiUrl()}/api/translate`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -36,7 +41,7 @@ function NewsPreview() {
     async function fetchNews() {
       try {
         console.log('📰 홈페이지 뉴스 프리뷰 가져오는 중...');
-        const res = await fetch('/api/news');
+        const res = await fetch(`${getApiUrl()}/api/news`);
         if (!res.ok) throw new Error(`뉴스 fetch 실패: ${res.status}`);
         const data = await res.json();
         console.log('✅ 홈페이지 뉴스 성공:', data.length, '개');

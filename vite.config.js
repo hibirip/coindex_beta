@@ -1,14 +1,13 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 
-// https://vite.dev/config/
+// https://vitejs.dev/config/
 export default defineConfig({
   plugins: [react()],
-  server: {
-    host: '0.0.0.0',
-    port: 5173,
-    proxy: {
-      '/api': 'http://localhost:4000',
-    }
-  }
+  // 환경변수 기반 API 설정을 사용하므로 프록시 제거
+  // server: {
+  //   proxy: {
+  //     '/api': 'http://localhost:4000',
+  //   },
+  // },
 })

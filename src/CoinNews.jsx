@@ -1,6 +1,11 @@
 import { useEffect, useState } from 'react';
 
-const RSS_URL = '/api/news';
+// API URL 환경변수 기반 설정
+const getApiUrl = () => {
+  return import.meta.env.VITE_API_URL || 'http://localhost:4000';
+};
+
+const RSS_URL = `${getApiUrl()}/api/news`;
 
 export default function CoinNews() {
   const [news, setNews] = useState([]);
@@ -11,7 +16,7 @@ export default function CoinNews() {
 
   const translateText = async (text, id) => {
     try {
-      const res = await fetch('/api/translate', {
+      const res = await fetch(`${getApiUrl()}/api/translate`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

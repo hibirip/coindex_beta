@@ -11,29 +11,9 @@ const useCryptoData = () => {
   // 업비트 API 재활성화
   const UPBIT_API_DISABLED = false;
 
-  // API URL 동적 설정 (모바일 지원)
+  // API URL 환경변수 기반 설정
   const getApiUrl = () => {
-    // 환경변수에서 API URL 확인
-    if (import.meta.env.VITE_API_URL) {
-      return import.meta.env.VITE_API_URL;
-    }
-    
-    // 개발 환경에서는 localhost:4000 사용
-    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
-      return 'http://localhost:4000';
-    }
-    
-    // 모바일이나 다른 환경에서는 현재 호스트의 4000번 포트 사용
-    // 만약 현재 호스트가 모바일이라면 사용자의 개발 머신 IP를 확인해야 함
-    const hostname = window.location.hostname;
-    
-    // 로컬 네트워크 IP 범위 확인
-    if (hostname.startsWith('192.168.') || hostname.startsWith('10.') || hostname.startsWith('172.')) {
-      return `http://${hostname}:4000`;
-    }
-    
-    // 기본값
-    return `http://${hostname}:4000`;
+    return import.meta.env.VITE_API_URL || 'http://localhost:4000';
   };
 
   // API 요청 함수 (에러 처리 강화)

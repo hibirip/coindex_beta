@@ -20,6 +20,71 @@ If you are developing a production application, we recommend using TypeScript wi
 - **커뮤니티**: 사용자 간 분석글 공유
 - **AI 자동 포스팅**: GPT 기반 1분마다 자동 분석글 생성
 
+## 🌐 배포 아키텍처
+
+이 프로젝트는 **프론트엔드와 백엔드가 분리된 구조**로 설계되었습니다:
+
+- **프론트엔드**: Vercel, Netlify 등에 배포
+- **백엔드**: EC2, DigitalOcean, Railway 등 별도 서버에 배포
+- **환경변수**: `VITE_API_URL`로 API 서버 주소 관리
+
+### 환경변수 설정
+
+#### 로컬 개발 (.env)
+```bash
+VITE_API_URL=http://localhost:4000
+```
+
+#### 프로덕션 배포 (.env.production)
+```bash
+VITE_API_URL=https://your-backend-server.com
+```
+
+### 배포 가이드
+
+#### 1. 백엔드 서버 배포
+```bash
+# 백엔드 서버에서
+node proxy-server.cjs
+# 또는 PM2 사용
+pm2 start proxy-server.cjs --name "coin-api"
+```
+
+#### 2. 프론트엔드 배포 (Vercel)
+```bash
+# 프로덕션 빌드
+npm run build
+
+# Vercel 배포
+vercel deploy
+
+# 환경변수 설정 (Vercel 대시보드에서)
+# VITE_API_URL=https://your-backend-server.com
+```
+
+#### 3. 환경변수 확인
+```javascript
+// 코드에서 사용 예시
+const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+console.log('API URL:', apiUrl);
+```
+
+## 🛠️ 설치 및 실행
+
+```bash
+# 의존성 설치
+npm install
+
+# 환경변수 파일 생성
+echo "VITE_API_URL=http://localhost:4000" > .env
+
+# 백엔드 서버 시작
+node proxy-server.cjs
+
+# 프론트엔드 개발 서버 시작 (새 터미널)
+npm run dev
+```
+
 ## 📱 모바일 접속 방법
 
 ### 1. 개발 서버 시작
@@ -45,32 +110,17 @@ ifconfig | grep "inet " | grep -v 127.0.0.1
 ipconfig | findstr "IPv4"
 ```
 
-## 🛠️ 설치 및 실행
-
-```bash
-# 의존성 설치
-npm install
-
-# 환경변수 설정 (.env 파일 확인)
-# VITE_API_URL=http://192.168.1.100:4000
-
-# 프록시 서버 시작
-node proxy-server.cjs
-
-# 개발 서버 시작 (새 터미널)
-npm run dev
-```
-
 ## 🔧 문제 해결
+
+### API 연결 문제
+1. **환경변수 확인**: `.env` 파일의 `VITE_API_URL` 설정 확인
+2. **백엔드 서버 상태 확인**: `curl http://localhost:4000/api/status`
+3. **CORS 문제**: 프로덕션에서는 백엔드 CORS 설정 확인
 
 ### 모바일에서 코인 시세가 안 보이는 경우
 1. **네트워크 연결 확인**: 컴퓨터와 모바일이 같은 Wi-Fi 네트워크에 있는지 확인
 2. **방화벽 설정**: 컴퓨터의 방화벽이 포트 4000, 5173을 차단하지 않는지 확인
-3. **IP 주소 확인**: `.env` 파일의 `VITE_API_URL`이 올바른 IP 주소인지 확인
-
-### 햄버거 메뉴가 작동하지 않는 경우
-- 페이지를 새로고침해보세요
-- 브라우저 캐시를 삭제해보세요
+3. **IP 주소 확인**: 환경변수의 API URL이 올바른 IP 주소인지 확인
 
 ### API 요청 실패 시
 ```bash
