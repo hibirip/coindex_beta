@@ -24,3 +24,5 @@ dist-ssr
 *.sw?
 .env
 .env
+
+VITE_API_URL=http://<서버공인IP>:4000

@@ -13,7 +13,10 @@ const useCryptoData = () => {
 
   // API URL 환경변수 기반 설정
   const getApiUrl = () => {
-    return import.meta.env.VITE_API_URL || 'http://localhost:4000';
+    const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:4000';
+    console.log('🔧 현재 API URL:', apiUrl);
+    console.log('🔧 환경변수 전체:', import.meta.env);
+    return apiUrl;
   };
 
   // API 요청 함수 (에러 처리 강화)
