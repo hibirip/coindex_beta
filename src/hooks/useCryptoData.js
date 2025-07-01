@@ -11,14 +11,78 @@ const useCryptoData = () => {
   // 업비트 API 재활성화
   const UPBIT_API_DISABLED = false;
 
+  // API URL 동적 설정 (모바일 지원)
+  const getApiUrl = () => {
+    // 환경변수에서 API URL 확인
+    if (import.meta.env.VITE_API_URL) {
+      return import.meta.env.VITE_API_URL;
+    }
+    
+    // 개발 환경에서는 localhost:4000 사용
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      return 'http://localhost:4000';
+    }
+    
+    // 모바일이나 다른 환경에서는 현재 호스트의 4000번 포트 사용
+    // 만약 현재 호스트가 모바일이라면 사용자의 개발 머신 IP를 확인해야 함
+    const hostname = window.location.hostname;
+    
+    // 로컬 네트워크 IP 범위 확인
+    if (hostname.startsWith('192.168.') || hostname.startsWith('10.') || hostname.startsWith('172.')) {
+      return `http://${hostname}:4000`;
+    }
+    
+    // 기본값
+    return `http://${hostname}:4000`;
+  };
+
+  // API 요청 함수 (에러 처리 강화)
+  const apiRequest = async (endpoint, options = {}) => {
+    const maxRetries = 3;
+    let lastError;
+
+    for (let attempt = 1; attempt <= maxRetries; attempt++) {
+      try {
+        const url = `${getApiUrl()}${endpoint}`;
+        console.log(`📡 API 요청 시도 ${attempt}/${maxRetries}: ${url}`);
+        
+        const response = await fetch(url, {
+          ...options,
+          timeout: 10000,
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+            ...options.headers
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+        }
+
+        const data = await response.json();
+        return data;
+      } catch (error) {
+        lastError = error;
+        console.warn(`⚠️ API 요청 실패 (${attempt}/${maxRetries}):`, error.message);
+        
+        if (attempt < maxRetries) {
+          // 재시도 전 대기 (지수 백오프)
+          await new Promise(resolve => setTimeout(resolve, Math.pow(2, attempt) * 1000));
+        }
+      }
+    }
+
+    throw lastError;
+  };
+
   // 업비트 전체 마켓 정보를 저장할 상태
   // koreanPopularCoins는 fallback용으로만 사용
 
   // 환율 정보 가져오기
   const fetchExchangeRate = async () => {
     try {
-      const response = await fetch('http://localhost:4000/api/fx');
-      const data = await response.json();
+      const data = await apiRequest('/api/fx');
       if (data && data.USD_KRW) {
         setExchangeRate(data.USD_KRW);
         console.log('✅ 환율 정보 업데이트:', data.USD_KRW);
@@ -31,14 +95,9 @@ const useCryptoData = () => {
   // 바이낸스 데이터 가져오기 (업비트 보조용)
   const fetchBinanceData = async () => {
     try {
-      const response = await fetch('http://localhost:4000/api/binance');
-      if (response.ok) {
-        const data = await response.json();
-        setBinanceData(data);
-        console.log('✅ 바이낸스 보조 데이터 로드:', data.length);
-      } else {
-        throw new Error(`바이낸스 API 오류: ${response.status}`);
-      }
+      const data = await apiRequest('/api/binance');
+      setBinanceData(data);
+      console.log('✅ 바이낸스 보조 데이터 로드:', data.length);
     } catch (error) {
       console.error('바이낸스 데이터 가져오기 실패:', error.message);
       setBinanceData([]);
@@ -48,15 +107,10 @@ const useCryptoData = () => {
   // 업비트 마켓 목록 가져오기 (하루 1번만 요청)
   const fetchUpbitMarkets = async () => {
     try {
-      const response = await fetch('http://localhost:4000/api/upbit/markets');
-      if (response.ok) {
-        const markets = await response.json();
-        setUpbitMarkets(markets);
-        console.log('✅ 업비트 마켓 목록 로드:', markets.length);
-        return markets;
-      } else {
-        throw new Error(`업비트 마켓 API 오류: ${response.status}`);
-      }
+      const markets = await apiRequest('/api/upbit/markets');
+      setUpbitMarkets(markets);
+      console.log('✅ 업비트 마켓 목록 로드:', markets.length);
+      return markets;
     } catch (error) {
       console.error('업비트 마켓 목록 가져오기 실패:', error.message);
       // 실패 시 빈 배열 반환 (바이낸스 데이터라도 보여주기 위해)
@@ -84,14 +138,14 @@ const useCryptoData = () => {
       let allData = [];
       for (const chunk of chunks) {
         const marketString = chunk.map(m => m.market).join(',');
-        const response = await fetch(`http://localhost:4000/api/upbit?markets=${marketString}`);
         
-        if (response.ok) {
-          const chunkData = await response.json();
+        try {
+          const chunkData = await apiRequest(`/api/upbit?markets=${marketString}`);
           allData = [...allData, ...chunkData];
           // console.log(`✅ 업비트 시세 청크 로드: ${chunkData.length}개`);
-        } else {
-          throw new Error(`업비트 시세 API 오류: ${response.status}`);
+        } catch (error) {
+          console.error(`업비트 시세 청크 로드 실패:`, error.message);
+          // 일부 청크 실패해도 계속 진행
         }
         
         // API 제한을 위해 잠시 대기 (50ms)

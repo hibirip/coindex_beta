@@ -12,9 +12,29 @@ const path = require('path');
 const app = express();
 const PORT = 4000;
 
-// CORS 설정
-app.use(cors());
+// CORS 설정 - 모바일 환경 포함
+const corsOptions = {
+  origin: true, // 모든 origin 허용
+  credentials: true,
+  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+  allowedHeaders: ['Content-Type', 'Authorization', 'X-Requested-With', 'Accept'],
+  optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 app.use(express.json());
+
+// 모든 요청에 대해 CORS 헤더 추가
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', '*');
+  res.header('Access-Control-Allow-Methods', 'GET, POST, PUT, DELETE, OPTIONS');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-Requested-With, Accept');
+  if (req.method === 'OPTIONS') {
+    res.sendStatus(200);
+  } else {
+    next();
+  }
+});
 
 // 업비트 API 재활성화
 const UPBIT_API_DISABLED = false;
@@ -651,8 +671,10 @@ app.get('/api/status', (req, res) => {
 });
 
 // 서버 시작
-app.listen(PORT, () => {
-  console.log(`🚀 프록시 서버가 포트 ${PORT}에서 실행 중입니다`);
+app.listen(PORT, '0.0.0.0', () => {
+  console.log(`🚀 프록시 서버가 모든 네트워크 인터페이스의 포트 ${PORT}에서 실행 중입니다`);
+  console.log(`📱 로컬 접속: http://localhost:${PORT}`);
+  console.log(`🌐 네트워크 접속: http://[YOUR_IP]:${PORT}`);
   console.log(`📊 바이낸스: http://localhost:${PORT}/api/binance`);
   if (UPBIT_API_DISABLED) {
     console.log(`⚠️ 업비트: 임시 비활성화됨 (나중에 재활성화 가능)`);
@@ -663,4 +685,16 @@ app.listen(PORT, () => {
   console.log(`💱 환율: http://localhost:${PORT}/api/fx`);
   console.log(`📰 뉴스: http://localhost:${PORT}/api/news`);
   console.log(`🔍 상태: http://localhost:${PORT}/api/status`);
+  
+  // 네트워크 인터페이스 IP 주소 출력
+  const os = require('os');
+  const interfaces = os.networkInterfaces();
+  console.log('\n📡 사용 가능한 네트워크 주소:');
+  Object.keys(interfaces).forEach(key => {
+    interfaces[key].forEach(addr => {
+      if (!addr.internal && addr.family === 'IPv4') {
+        console.log(`   http://${addr.address}:${PORT}`);
+      }
+    });
+  });
 }); 

@@ -104,6 +104,7 @@ function DarkModeToggle({ isDark, onToggle }) {
 function Header({ isDark, onToggleDarkMode }) {
   const location = useLocation();
   const [scrolled, setScrolled] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const { user, signOut } = useAuth();
   const [userInfo, setUserInfo] = useState(null);
   const [signInModalOpen, setSignInModalOpen] = useState(false);
@@ -133,6 +134,19 @@ function Header({ isDark, onToggleDarkMode }) {
     }
   }, [user]);
 
+  // 모바일 메뉴가 열릴 때 스크롤 방지
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+    
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [mobileMenuOpen]);
+
   return (
     <>
       <header className={`fixed top-0 w-full z-50 transition-all duration-300 ${
@@ -149,7 +163,7 @@ function Header({ isDark, onToggleDarkMode }) {
             />
           </div>
 
-          {/* 네비게이션 */}
+          {/* 데스크톱 네비게이션 */}
           <nav className="hidden md:flex items-center space-x-1">
             {MENU_ITEMS.map((item) => {
               const isActive = location.pathname === item.link;
@@ -169,50 +183,149 @@ function Header({ isDark, onToggleDarkMode }) {
           <div className="flex items-center space-x-3">
             <DarkModeToggle isDark={isDark} onToggle={onToggleDarkMode} />
             
-            {user ? (
-              <>
-                <Link to="/mypage" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
-                  <ProfileAvatar
-                    gradientColors={userInfo?.gradient_colors}
-                    nickname={userInfo?.nickname}
-                    size="sm"
-                  />
-                  <span className="hidden sm:block text-sm font-medium">마이페이지</span>
-                </Link>
-                <button 
-                  onClick={() => signOut()}
-                  className="hidden sm:block btn-secondary"
-                >
-                  로그아웃
-                </button>
-              </>
-            ) : (
-              <>
-                <button 
-                  onClick={() => setSignInModalOpen(true)}
-                  className="hidden sm:block btn-primary"
-                >
-                  로그인
-                </button>
-                <button 
-                  onClick={() => setSignUpModalOpen(true)}
-                  className="hidden sm:block btn-secondary"
-                >
-                  회원가입
-                </button>
-              </>
-            )}
+            {/* 데스크톱 사용자 메뉴 */}
+            <div className="hidden md:flex items-center space-x-3">
+              {user ? (
+                <>
+                  <Link to="/mypage" className="flex items-center gap-2 hover:opacity-80 transition-opacity">
+                    <ProfileAvatar
+                      gradientColors={userInfo?.gradient_colors}
+                      nickname={userInfo?.nickname}
+                      size="sm"
+                    />
+                    <span className="hidden sm:block text-sm font-medium">마이페이지</span>
+                  </Link>
+                  <button 
+                    onClick={() => signOut()}
+                    className="btn-secondary"
+                  >
+                    로그아웃
+                  </button>
+                </>
+              ) : (
+                <>
+                  <button 
+                    onClick={() => setSignInModalOpen(true)}
+                    className="btn-primary"
+                  >
+                    로그인
+                  </button>
+                  <button 
+                    onClick={() => setSignUpModalOpen(true)}
+                    className="btn-secondary"
+                  >
+                    회원가입
+                  </button>
+                </>
+              )}
+            </div>
             
             {/* 모바일 메뉴 버튼 */}
-            <button className="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800">
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-              </svg>
+            <button 
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="md:hidden p-2 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+              aria-label="메뉴 열기"
+            >
+              {mobileMenuOpen ? (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
             </button>
           </div>
         </div>
-      </div>
-    </header>
+        </div>
+
+        {/* 모바일 메뉴 */}
+        {mobileMenuOpen && (
+          <div className="md:hidden fixed inset-0 top-16 z-40">
+            {/* 배경 오버레이 */}
+            <div 
+              className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+              onClick={() => setMobileMenuOpen(false)}
+            />
+            
+            {/* 메뉴 컨텐츠 */}
+            <div className="relative bg-light-surface dark:bg-dark-surface border-b border-light-border dark:border-dark-border shadow-xl">
+              <div className="px-4 py-6 space-y-1">
+                {/* 네비게이션 메뉴 */}
+                {MENU_ITEMS.map((item) => {
+                  const isActive = location.pathname === item.link;
+                  return (
+                    <Link
+                      key={item.link}
+                      to={item.link}
+                      onClick={() => setMobileMenuOpen(false)}
+                      className={`block px-4 py-3 rounded-lg font-medium transition-colors ${
+                        isActive 
+                          ? 'bg-primary-100 dark:bg-primary-900/20 text-primary-600 dark:text-primary-400' 
+                          : 'hover:bg-gray-100 dark:hover:bg-gray-800 text-light-text dark:text-dark-text'
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  );
+                })}
+                
+                {/* 구분선 */}
+                <hr className="my-4 border-light-border dark:border-dark-border" />
+                
+                {/* 사용자 메뉴 */}
+                {user ? (
+                  <div className="space-y-2">
+                    <Link 
+                      to="/mypage" 
+                      onClick={() => setMobileMenuOpen(false)}
+                      className="flex items-center gap-3 px-4 py-3 rounded-lg hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors"
+                    >
+                      <ProfileAvatar
+                        gradientColors={userInfo?.gradient_colors}
+                        nickname={userInfo?.nickname}
+                        size="sm"
+                      />
+                      <span className="font-medium">마이페이지</span>
+                    </Link>
+                    <button 
+                      onClick={() => {
+                        signOut();
+                        setMobileMenuOpen(false);
+                      }}
+                      className="w-full text-left px-4 py-3 rounded-lg hover:bg-red-50 dark:hover:bg-red-900/20 text-red-600 dark:text-red-400 font-medium transition-colors"
+                    >
+                      로그아웃
+                    </button>
+                  </div>
+                ) : (
+                  <div className="space-y-2">
+                    <button 
+                      onClick={() => {
+                        setSignInModalOpen(true);
+                        setMobileMenuOpen(false);
+                      }}
+                      className="w-full px-4 py-3 bg-primary-600 hover:bg-primary-700 text-white rounded-lg font-medium transition-colors"
+                    >
+                      로그인
+                    </button>
+                    <button 
+                      onClick={() => {
+                        setSignUpModalOpen(true);
+                        setMobileMenuOpen(false);
+                      }}
+                      className="w-full px-4 py-3 border border-primary-600 text-primary-600 dark:text-primary-400 rounded-lg font-medium hover:bg-primary-50 dark:hover:bg-primary-900/20 transition-colors"
+                    >
+                      회원가입
+                    </button>
+                  </div>
+                )}
+              </div>
+            </div>
+          </div>
+        )}
+      </header>
     
     {/* 모달들 */}
     <SignInModal

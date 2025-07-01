@@ -47,6 +47,17 @@ export default function CoinTable({ upbitData, binanceData, exchangeRate, search
       return [];
     }
   });
+  const [isMobile, setIsMobile] = useState(false);
+
+  // 모바일 감지
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   // 바이낸스 데이터를 맵으로 변환
   const binanceMap = {};
@@ -201,6 +212,185 @@ export default function CoinTable({ upbitData, binanceData, exchangeRate, search
     );
   };
 
+  // 모바일 카드 렌더링
+  const renderMobileCard = (coin) => {
+    const isFavorite = favorites.includes(coin.symbol);
+    const isPositive = coin.signed_change_rate >= 0;
+    const flash = flashMap[coin.market];
+    
+    return (
+      <div 
+        key={coin.market}
+        className={`
+          bg-white dark:bg-gray-800 rounded-lg p-4 mb-3 shadow-sm border border-gray-200 dark:border-gray-700
+          ${isFavorite ? 'ring-2 ring-yellow-300 dark:ring-yellow-600' : ''}
+          ${flash === 'up' ? 'flash-up' : flash === 'down' ? 'flash-down' : ''}
+          transition-all duration-200
+        `}
+      >
+        <div className="flex items-center justify-between mb-3">
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => toggleFavorite(coin.symbol)}
+              className="flex-shrink-0 p-1 hover:scale-110 transition-transform"
+            >
+              <StarIcon filled={isFavorite} />
+            </button>
+            <img 
+              src={getCoinLogoUrl(coin.symbol)} 
+              alt={coin.symbol}
+              className="w-8 h-8 rounded-full bg-gray-100 dark:bg-gray-700"
+              onError={(e) => {
+                e.target.onerror = null;
+                e.target.src = `https://via.placeholder.com/32/888888/ffffff?text=${coin.symbol[0]}`;
+              }}
+            />
+            <div>
+              <div className="font-semibold text-gray-900 dark:text-gray-100">
+                {coin.koreanName}
+              </div>
+              <div className="text-sm text-gray-500 dark:text-gray-400">
+                {coin.symbol}
+              </div>
+            </div>
+          </div>
+          <div className="text-right">
+            <div className={`font-bold text-lg ${
+              flash === 'up' ? 'text-red-500' : 
+              flash === 'down' ? 'text-blue-500' : 
+              'text-black dark:text-gray-200'
+            }`}>
+              {price(coin.trade_price)}
+            </div>
+          </div>
+        </div>
+        
+        <div className="grid grid-cols-2 gap-4 text-sm">
+          <div>
+            <div className="text-gray-500 dark:text-gray-400 mb-1">전일대비</div>
+            <div className={`font-semibold ${
+              isPositive ? 'text-red-500' : 'text-blue-500'
+            }`}>
+              {percent(coin.signed_change_rate * 100)}
+            </div>
+            <div className={`text-xs ${
+              isPositive ? 'text-red-400' : 'text-blue-400'
+            }`}>
+              {price(coin.signed_change_price)}
+            </div>
+          </div>
+          
+          <div>
+            <div className="text-gray-500 dark:text-gray-400 mb-1">거래대금</div>
+            <div className="font-medium text-gray-700 dark:text-gray-300">
+              {volume(coin.acc_trade_price_24h)}
+            </div>
+          </div>
+          
+          {coin.kimchiPremium !== null && (
+            <div className="col-span-2">
+              <div className="text-gray-500 dark:text-gray-400 mb-1">김치프리미엄</div>
+              <div className={`font-semibold ${
+                coin.kimchiPremium > 0 ? 'text-red-500' : 
+                coin.kimchiPremium < 0 ? 'text-blue-500' : 
+                'text-gray-500 dark:text-gray-400'
+              }`}>
+                {percent(coin.kimchiPremium)}
+              </div>
+            </div>
+          )}
+        </div>
+      </div>
+    );
+  };
+
+  // 모바일 버전
+  if (isMobile) {
+    return (
+      <div className="space-y-3">
+        {/* 모바일 정렬 버튼 */}
+        <div className="flex flex-wrap gap-2 mb-4">
+          <button
+            onClick={() => handleSort('koreanName')}
+            className={`px-3 py-1.5 text-xs rounded-full transition-colors ${
+              sortKey === 'koreanName' 
+                ? 'bg-primary-500 text-white' 
+                : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300'
+            }`}
+          >
+            이름 {getSortIcon('koreanName')}
+          </button>
+          <button
+            onClick={() => handleSort('trade_price')}
+            className={`px-3 py-1.5 text-xs rounded-full transition-colors ${
+              sortKey === 'trade_price' 
+                ? 'bg-primary-500 text-white' 
+                : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300'
+            }`}
+          >
+            가격 {getSortIcon('trade_price')}
+          </button>
+          <button
+            onClick={() => handleSort('signed_change_rate')}
+            className={`px-3 py-1.5 text-xs rounded-full transition-colors ${
+              sortKey === 'signed_change_rate' 
+                ? 'bg-primary-500 text-white' 
+                : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300'
+            }`}
+          >
+            변동률 {getSortIcon('signed_change_rate')}
+          </button>
+          <button
+            onClick={() => handleSort('acc_trade_price_24h')}
+            className={`px-3 py-1.5 text-xs rounded-full transition-colors ${
+              sortKey === 'acc_trade_price_24h' 
+                ? 'bg-primary-500 text-white' 
+                : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300'
+            }`}
+          >
+            거래량 {getSortIcon('acc_trade_price_24h')}
+          </button>
+        </div>
+
+        {/* 모바일 카드 리스트 */}
+        {sortedCoins.map(renderMobileCard)}
+        
+        {/* 검색 결과가 없을 때 */}
+        {filteredCoins.length === 0 && searchTerm && (
+          <div className="text-center py-12">
+            <div className="text-gray-500 dark:text-gray-400">
+              <p className="text-lg mb-2">"{searchTerm}" 검색 결과가 없습니다</p>
+              <p className="text-sm">다른 검색어로 시도해보세요</p>
+            </div>
+          </div>
+        )}
+        
+        <style jsx>{`
+          @keyframes flash-up {
+            0% { background-color: rgba(239, 68, 68, 0); }
+            50% { background-color: rgba(239, 68, 68, 0.15); }
+            100% { background-color: rgba(239, 68, 68, 0); }
+          }
+          
+          @keyframes flash-down {
+            0% { background-color: rgba(59, 130, 246, 0); }
+            50% { background-color: rgba(59, 130, 246, 0.15); }
+            100% { background-color: rgba(59, 130, 246, 0); }
+          }
+          
+          .flash-up {
+            animation: flash-up 0.2s ease-in-out;
+          }
+          
+          .flash-down {
+            animation: flash-down 0.2s ease-in-out;
+          }
+        `}</style>
+      </div>
+    );
+  }
+
+  // 데스크톱 버전
   return (
     <div className="overflow-x-auto rounded-lg dark:bg-gray-900/50">
       <table className="w-full">
