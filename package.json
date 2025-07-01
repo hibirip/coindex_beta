@@ -4,6 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
+    "start": "node proxy-server.cjs",
     "dev": "vite",
     "build": "vite build",
     "lint": "eslint .",
@@ -12,8 +13,7 @@
     "ai-system": "node gpt-advanced-system.js",
     "community-ai": "node gpt-community-poster.js",
     "news-analyst": "node gpt-news-analyst.js",
-    "backend": "node proxy-server.cjs",
-    "start": "node proxy-server.cjs"
+    "backend": "node proxy-server.cjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.50.2",
