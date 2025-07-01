@@ -190,6 +190,32 @@ async function updateGoogleFxCache() {
 updateGoogleFxCache();
 setInterval(updateGoogleFxCache, 5 * 60 * 1000);
 
+// API 상태 확인 엔드포인트
+app.get('/api/status', (req, res) => {
+  res.json({ 
+    status: 'ok',
+    message: 'COINDEX API 서버가 정상적으로 동작 중입니다.',
+    timestamp: new Date().toISOString()
+  });
+});
+
+// 루트 경로 안내
+app.get('/', (req, res) => {
+  res.send(`
+    <h1>COINDEX API Server</h1>
+    <p>API 서버가 정상적으로 동작 중입니다.</p>
+    <p>사용 가능한 엔드포인트:</p>
+    <ul>
+      <li><a href="/api/status">/api/status</a> - 서버 상태 확인</li>
+      <li>/api/upbit - 업비트 실시간 시세</li>
+      <li>/api/upbit/markets - 업비트 마켓 목록</li>
+      <li>/api/binance - 바이낸스 시세</li>
+      <li>/api/news - 코인 뉴스</li>
+      <li>/api/fx - 환율 정보</li>
+    </ul>
+  `);
+});
+
 // 환율 API
 app.get('/api/fx', async (req, res) => {
   try {
