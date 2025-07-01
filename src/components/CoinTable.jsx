@@ -38,6 +38,7 @@ function StarIcon({ filled, ...props }) {
 export default function CoinTable({ upbitData, binanceData, exchangeRate, searchTerm }) {
   const [flashMap, setFlashMap] = useState({});
   const prevPrices = useRef({});
+  // 거래대금 기준 고정 정렬 (변경 불가)
   const [sortKey, setSortKey] = useState('acc_trade_price_24h');
   const [sortOrder, setSortOrder] = useState('desc');
   const [favorites, setFavorites] = useState(() => {
@@ -48,6 +49,8 @@ export default function CoinTable({ upbitData, binanceData, exchangeRate, search
     }
   });
   const [isMobile, setIsMobile] = useState(false);
+  // 안정적인 정렬을 위한 초기 순서 저장
+  const [initialOrder, setInitialOrder] = useState({});
 
   // 모바일 감지
   useEffect(() => {
@@ -110,6 +113,24 @@ export default function CoinTable({ upbitData, binanceData, exchangeRate, search
           binancePrice: binanceCoin ? parseFloat(binanceCoin.lastPrice) : null
         };
       });
+
+    // 초기 순서 설정 (거래대금 기준 내림차순으로 고정)
+    processedCoins.sort((a, b) => {
+      const aVal = a.acc_trade_price_24h || 0;
+      const bVal = b.acc_trade_price_24h || 0;
+      if (aVal === bVal) {
+        // 거래대금이 같으면 심볼 순으로 안정적 정렬
+        return a.symbol.localeCompare(b.symbol);
+      }
+      return bVal - aVal; // 내림차순
+    });
+
+    // 초기 순서를 인덱스로 저장 (순서 고정용)
+    const newInitialOrder = {};
+    processedCoins.forEach((coin, index) => {
+      newInitialOrder[coin.market] = index;
+    });
+    setInitialOrder(newInitialOrder);
   }
 
   // 가격 변동 감지 및 플래시 효과
@@ -168,48 +189,28 @@ export default function CoinTable({ upbitData, binanceData, exchangeRate, search
     });
   }
 
-  // 정렬
+  // 거래대금 기준 고정 정렬 (순서 변경 없음)
   let sortedCoins = [...filteredCoins];
+  
+  // 초기 순서 기준으로 안정적 정렬
   sortedCoins.sort((a, b) => {
-    let aVal, bVal;
-    if (sortKey === 'koreanName') {
-      aVal = a.koreanName;
-      bVal = b.koreanName;
-      return sortOrder === 'asc' ? aVal.localeCompare(bVal) : bVal.localeCompare(aVal);
-    } else if (sortKey === 'kimchiPremium') {
-      aVal = a.kimchiPremium || -Infinity;
-      bVal = b.kimchiPremium || -Infinity;
-    } else {
-      aVal = a[sortKey] || -Infinity;
-      bVal = b[sortKey] || -Infinity;
-    }
-    return sortOrder === 'asc' ? aVal - bVal : bVal - aVal;
+    const aOrder = initialOrder[a.market] ?? 999999;
+    const bOrder = initialOrder[b.market] ?? 999999;
+    return aOrder - bOrder;
   });
 
-  // 즐겨찾기 상단 고정
-  sortedCoins.sort((a, b) => {
-    const aFav = favorites.includes(a.symbol);
-    const bFav = favorites.includes(b.symbol);
-    if (aFav === bFav) return 0;
-    return aFav ? -1 : 1;
-  });
-
+  // 정렬 기능 제거 (고정 정렬)
   const handleSort = (key) => {
-    if (sortKey === key) {
-      setSortOrder(prev => prev === 'asc' ? 'desc' : 'asc');
-    } else {
-      setSortKey(key);
-      setSortOrder('desc');
-    }
+    // 거래대금 기준 고정 정렬이므로 정렬 변경 불가
+    return;
   };
 
   const getSortIcon = (key) => {
-    if (sortKey !== key) return null;
-    return sortOrder === 'asc' ? (
-      <span className="inline-block align-middle ml-1">▲</span>
-    ) : (
-      <span className="inline-block align-middle ml-1">▼</span>
-    );
+    // 거래대금만 정렬 표시
+    if (key === 'acc_trade_price_24h') {
+      return <span className="inline-block align-middle ml-1">▼</span>;
+    }
+    return null;
   };
 
   // 모바일 카드 렌더링
@@ -308,48 +309,13 @@ export default function CoinTable({ upbitData, binanceData, exchangeRate, search
   if (isMobile) {
     return (
       <div className="space-y-3">
-        {/* 모바일 정렬 버튼 */}
-        <div className="flex flex-wrap gap-2 mb-4">
-          <button
-            onClick={() => handleSort('koreanName')}
-            className={`px-3 py-1.5 text-xs rounded-full transition-colors ${
-              sortKey === 'koreanName' 
-                ? 'bg-primary-500 text-white' 
-                : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300'
-            }`}
-          >
-            이름 {getSortIcon('koreanName')}
-          </button>
-          <button
-            onClick={() => handleSort('trade_price')}
-            className={`px-3 py-1.5 text-xs rounded-full transition-colors ${
-              sortKey === 'trade_price' 
-                ? 'bg-primary-500 text-white' 
-                : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300'
-            }`}
-          >
-            가격 {getSortIcon('trade_price')}
-          </button>
-          <button
-            onClick={() => handleSort('signed_change_rate')}
-            className={`px-3 py-1.5 text-xs rounded-full transition-colors ${
-              sortKey === 'signed_change_rate' 
-                ? 'bg-primary-500 text-white' 
-                : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300'
-            }`}
-          >
-            변동률 {getSortIcon('signed_change_rate')}
-          </button>
-          <button
-            onClick={() => handleSort('acc_trade_price_24h')}
-            className={`px-3 py-1.5 text-xs rounded-full transition-colors ${
-              sortKey === 'acc_trade_price_24h' 
-                ? 'bg-primary-500 text-white' 
-                : 'bg-gray-100 dark:bg-gray-700 text-gray-600 dark:text-gray-300'
-            }`}
-          >
-            거래량 {getSortIcon('acc_trade_price_24h')}
-          </button>
+        {/* 거래대금 기준 고정 정렬 안내 */}
+        <div className="flex items-center justify-center mb-4">
+          <div className="px-4 py-2 bg-blue-50 dark:bg-blue-900/20 rounded-full">
+            <span className="text-sm text-blue-600 dark:text-blue-400 font-medium">
+              📊 거래대금 순 정렬
+            </span>
+          </div>
         </div>
 
         {/* 모바일 카드 리스트 */}
@@ -396,39 +362,30 @@ export default function CoinTable({ upbitData, binanceData, exchangeRate, search
       <table className="w-full">
         <thead className="dark:bg-gray-800/50">
           <tr className="text-[11px] uppercase tracking-wider text-gray-500 dark:text-gray-400 border-b border-gray-100 dark:border-gray-700">
-            <th className="text-left py-1.5 px-2 font-medium cursor-pointer hover:text-gray-700 dark:hover:text-gray-200 transition-colors" 
-                onClick={() => handleSort('koreanName')}>
+            <th className="text-left py-1.5 px-2 font-medium">
               <div className="flex items-center gap-1">
                 <span>코인</span>
-                {getSortIcon('koreanName')}
               </div>
             </th>
-            <th className="text-right py-1.5 px-2 font-medium cursor-pointer hover:text-gray-700 dark:hover:text-gray-200 transition-colors" 
-                onClick={() => handleSort('trade_price')}>
+            <th className="text-right py-1.5 px-2 font-medium">
               <div className="flex items-center justify-end gap-1">
                 <span>현재가</span>
-                {getSortIcon('trade_price')}
               </div>
             </th>
-            <th className="text-right py-1.5 px-2 font-medium cursor-pointer hover:text-gray-700 dark:hover:text-gray-200 transition-colors" 
-                onClick={() => handleSort('signed_change_rate')}>
+            <th className="text-right py-1.5 px-2 font-medium">
               <div className="flex items-center justify-end gap-1">
                 <span>전일대비</span>
-                {getSortIcon('signed_change_rate')}
               </div>
             </th>
-            <th className="text-right py-1.5 px-2 font-medium cursor-pointer hover:text-gray-700 dark:hover:text-gray-200 transition-colors hidden sm:table-cell" 
-                onClick={() => handleSort('acc_trade_price_24h')}>
+            <th className="text-right py-1.5 px-2 font-medium hidden sm:table-cell">
               <div className="flex items-center justify-end gap-1">
                 <span>거래대금</span>
                 {getSortIcon('acc_trade_price_24h')}
               </div>
             </th>
-            <th className="text-right py-1.5 px-2 font-medium cursor-pointer hover:text-gray-700 dark:hover:text-gray-200 transition-colors hidden md:table-cell" 
-                onClick={() => handleSort('kimchiPremium')}>
+            <th className="text-right py-1.5 px-2 font-medium hidden md:table-cell">
               <div className="flex items-center justify-end gap-1">
                 <span>김프</span>
-                {getSortIcon('kimchiPremium')}
               </div>
             </th>
           </tr>

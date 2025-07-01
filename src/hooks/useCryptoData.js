@@ -100,20 +100,18 @@ const useCryptoData = () => {
     }
   };
 
-  // 업비트 실시간 시세 가져오기 (모든 코인, 0.5초마다)
+  // 업비트 실시간 시세 가져오기 (최적화된 청크 처리)
   const fetchUpbitTicker = async (markets) => {
     try {
       if (!markets || markets.length === 0) {
         return;
       }
 
-      // 업비트 API 제한: 한 번에 최대 100개까지만 요청 가능
+      // 50개씩 청크 분할 (Rate Limit 회피)
       const chunks = [];
-      for (let i = 0; i < markets.length; i += 100) {
-        chunks.push(markets.slice(i, i + 100));
+      for (let i = 0; i < markets.length; i += 50) {
+        chunks.push(markets.slice(i, i + 50));
       }
-
-      // console.log(`📊 업비트 전체 시세 요청: ${markets.length}개 마켓 (${chunks.length}번 요청)`);
       
       let allData = [];
       for (const chunk of chunks) {
@@ -122,15 +120,14 @@ const useCryptoData = () => {
         try {
           const chunkData = await apiRequest(`/api/upbit?markets=${marketString}`);
           allData = [...allData, ...chunkData];
-          // console.log(`✅ 업비트 시세 청크 로드: ${chunkData.length}개`);
         } catch (error) {
           console.error(`업비트 시세 청크 로드 실패:`, error.message);
           // 일부 청크 실패해도 계속 진행
         }
         
-        // API 제한을 위해 잠시 대기 (30ms로 단축)
+        // 청크 간 대기시간 150ms (Rate Limit 회피)
         if (chunks.length > 1) {
-          await new Promise(resolve => setTimeout(resolve, 30));
+          await new Promise(resolve => setTimeout(resolve, 150));
         }
       }
 
@@ -147,7 +144,6 @@ const useCryptoData = () => {
       }));
 
       setUpbitData(mergedData);
-      // console.log(`✅ 업비트 전체 시세 업데이트 완료: ${mergedData.length}개 코인`);
       return mergedData;
       
     } catch (error) {
@@ -203,10 +199,10 @@ const useCryptoData = () => {
         // 첫 번째 틱 데이터 로딩
         await updateTickData(markets);
         
-        // 실시간 틱 업데이트 시작 (0.3초마다)
+        // 실시간 틱 업데이트 시작 (0.5초로 복원)
         tickInterval = setInterval(() => {
           updateTickData(markets);
-        }, 300); // 0.3초마다 업데이트
+        }, 500); // 0.5초로 복원!
         
       } catch (error) {
         setLoading(false);

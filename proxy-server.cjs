@@ -91,9 +91,10 @@ const cache = {
   newsData: { data: null, timestamp: 0 }
 };
 
-// API 호출 제한
+// API 호출 제한 - 업비트 전용 추가
 const rateLimiter = {
   binance: { lastCall: 0, minInterval: 1000 },
+  upbit: { lastCall: 0, minInterval: 100 }, // 업비트는 100ms 간격
 };
 
 // 캐시 확인 함수
@@ -339,31 +340,27 @@ app.get('/api/upbit/markets', async (req, res) => {
   }
 });
 
-  // 업비트 실시간 시세 API
+// 업비트 API - Rate Limit 관리 강화
 app.get('/api/upbit', async (req, res) => {
   try {
     const { markets } = req.query;
     
     if (!markets) {
-      return res.status(400).json({ error: '마켓 코드가 필요합니다 (예: ?markets=KRW-BTC,KRW-ETH)' });
+      return res.status(400).json({ error: '마켓 코드가 필요합니다' });
     }
 
-    // 업비트는 캐시 사용하지 않음 - 항상 실시간 데이터
+    // Rate Limit 체크
+    if (!canMakeRequest('upbit')) {
+      return res.status(429).json({ error: 'Rate limit exceeded, 잠시 후 다시 시도해주세요' });
+    }
 
-    // 업비트 API 제한: 한 번에 최대 100개 마켓만 요청 가능
     const marketArray = markets.split(',');
-    if (marketArray.length > 100) {
-      return res.status(400).json({ 
-        error: '한 번에 최대 100개 마켓만 요청 가능합니다',
-        requested: marketArray.length 
-      });
-    }
-
+    
     // 로그 완전 제거 (성능 최적화)
     const response = await fetch(`https://api.upbit.com/v1/ticker?markets=${markets}`, {
       agent: generalHttpsAgent,
       headers: commonHeaders,
-      timeout: 8000 // 타임아웃 단축
+      timeout: 5000 // 타임아웃 더 단축
     });
 
     if (!response.ok) {
@@ -372,10 +369,9 @@ app.get('/api/upbit', async (req, res) => {
 
     const data = await response.json();
     res.json(data);
-
+    
   } catch (error) {
     console.error('업비트 시세 API 에러:', error.message);
-    
     // 캐시 사용하지 않음 - 즉시 에러 반환
     res.status(503).json({ 
       error: '업비트 API 일시적 오류', 
