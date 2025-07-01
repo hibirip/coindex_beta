@@ -81,15 +81,13 @@ const commonHeaders = {
 
 // 캐시 설정 - 업비트는 캐시 사용하지 않음
 const cacheConfig = {
-  binanceData: { ttl: 5 * 60 * 1000 }, // 5분
-  upbitData: { ttl: 0 }, // 캐시 사용하지 않음 - 실시간 데이터
-  newsData: { ttl: 5 * 60 * 1000 } // 5분
+  binanceData: { ttl: 0 }, // 실시간으로 변경
+  newsData: { ttl: 20 * 60 * 1000 } // 20분으로 변경
 };
 
 // 캐시 저장소 초기화
 const cache = {
   binanceData: { data: null, timestamp: 0 },
-  upbitData: { data: null, timestamp: 0 },
   newsData: { data: null, timestamp: 0 }
 };
 
@@ -243,21 +241,17 @@ app.get('/api/fx', async (req, res) => {
 // 바이낸스 API
 app.get('/api/binance', async (req, res) => {
   try {
-    const cachedData = getCachedData('binanceData');
-    if (cachedData) {
-      console.log('🚀 바이낸스 캐시 데이터 사용');
-      return res.json(cachedData);
-    }
+    // 캐시 사용하지 않음 - 실시간 데이터
     
     if (!canMakeRequest('binance')) {
       return res.status(429).json({ error: 'Rate limit exceeded' });
     }
     
-    console.log('📊 바이낸스 24시간 티커 데이터 요청');
+    // 로그 제거 (성능 향상)
     const response = await fetch('https://api.binance.com/api/v3/ticker/24hr', {
       agent: generalHttpsAgent,
       headers: commonHeaders,
-      timeout: 15000
+      timeout: 10000 // 타임아웃 단축
     });
     
     if (!response.ok) {
@@ -265,9 +259,8 @@ app.get('/api/binance', async (req, res) => {
     }
     
     const data = await response.json();
-    setCachedData('binanceData', data);
+    // 캐시 저장하지 않음
     
-    console.log(`✅ 바이낸스 데이터 ${data.length}개 코인 정보 로드 완료`);
     res.json(data);
   } catch (error) {
     console.error('바이낸스 API 에러:', error.message);
@@ -366,12 +359,11 @@ app.get('/api/upbit', async (req, res) => {
       });
     }
 
-    console.log(`📊 업비트 실시간 시세 데이터 요청: ${marketArray.length}개 마켓`);
-    console.log(`   요청된 마켓: ${marketArray.slice(0, 5).join(', ')}...`);
+    // 로그 완전 제거 (성능 최적화)
     const response = await fetch(`https://api.upbit.com/v1/ticker?markets=${markets}`, {
       agent: generalHttpsAgent,
       headers: commonHeaders,
-      timeout: 10000
+      timeout: 8000 // 타임아웃 단축
     });
 
     if (!response.ok) {
@@ -379,26 +371,15 @@ app.get('/api/upbit', async (req, res) => {
     }
 
     const data = await response.json();
-    // 캐시 저장하지 않음
-
-    console.log(`✅ 업비트 시세 데이터 ${data.length}개 코인 정보 로드 완료`);
     res.json(data);
 
   } catch (error) {
     console.error('업비트 시세 API 에러:', error.message);
     
-    // 캐시된 데이터가 있으면 반환 (오래된 데이터라도)
-    const oldCache = cache.upbitData;
-    if (oldCache && oldCache.data) {
-      console.log('⚠️ 업비트 API 실패, 이전 캐시 데이터 사용');
-      return res.json(oldCache.data);
-    }
-    
-    // 캐시도 없으면 에러 반환
+    // 캐시 사용하지 않음 - 즉시 에러 반환
     res.status(503).json({ 
       error: '업비트 API 일시적 오류', 
-      message: '잠시 후 다시 시도해주세요',
-      details: error.message 
+      message: '잠시 후 다시 시도해주세요'
     });
   }
 });
@@ -406,7 +387,11 @@ app.get('/api/upbit', async (req, res) => {
 // Coinness.com 속보 뉴스 API - 새로운 구현
 app.get('/api/news', async (req, res) => {
   try {
-    // console.log('📰 Coinness.com 속보 뉴스 가져오는 중...'); // 너무 자주 출력되어 주석 처리
+    // 캐시 확인 (20분)
+    const cachedData = getCachedData('newsData');
+    if (cachedData) {
+      return res.json(cachedData);
+    }
     
     // Coinness.com 웹사이트 크롤링
     const response = await fetch('https://coinness.com/', {
@@ -440,7 +425,8 @@ app.get('/api/news', async (req, res) => {
       newsItems = generateFallbackNews();
     }
 
-    // console.log(`✅ Coinness 뉴스 ${newsItems.length}개 반환`);
+    // 캐시 저장
+    setCachedData('newsData', newsItems);
 
     res.json(newsItems);
 

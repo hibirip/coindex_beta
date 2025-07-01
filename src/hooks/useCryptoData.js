@@ -14,24 +14,23 @@ const useCryptoData = () => {
   // API URL 환경변수 기반 설정
   const getApiUrl = () => {
     const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:4000';
-    console.log('🔧 현재 API URL:', apiUrl);
-    console.log('🔧 환경변수 전체:', import.meta.env);
+    // 로그 제거 (성능 향상)
     return apiUrl;
   };
 
   // API 요청 함수 (에러 처리 강화)
   const apiRequest = async (endpoint, options = {}) => {
-    const maxRetries = 3;
+    const maxRetries = 2; // 재시도 횟수 줄임
     let lastError;
 
     for (let attempt = 1; attempt <= maxRetries; attempt++) {
       try {
         const url = `${getApiUrl()}${endpoint}`;
-        console.log(`📡 API 요청 시도 ${attempt}/${maxRetries}: ${url}`);
+        // 로그 제거
         
         const response = await fetch(url, {
           ...options,
-          timeout: 10000,
+          timeout: 8000, // 타임아웃 단축
           headers: {
             'Accept': 'application/json',
             'Content-Type': 'application/json',
@@ -47,11 +46,10 @@ const useCryptoData = () => {
         return data;
       } catch (error) {
         lastError = error;
-        console.warn(`⚠️ API 요청 실패 (${attempt}/${maxRetries}):`, error.message);
         
         if (attempt < maxRetries) {
-          // 재시도 전 대기 (지수 백오프)
-          await new Promise(resolve => setTimeout(resolve, Math.pow(2, attempt) * 1000));
+          // 재시도 전 대기 시간 단축
+          await new Promise(resolve => setTimeout(resolve, attempt * 500));
         }
       }
     }
@@ -68,7 +66,7 @@ const useCryptoData = () => {
       const data = await apiRequest('/api/fx');
       if (data && data.USD_KRW) {
         setExchangeRate(data.USD_KRW);
-        console.log('✅ 환율 정보 업데이트:', data.USD_KRW);
+        // 로그 제거
       }
     } catch (error) {
       console.error('환율 정보 가져오기 실패:', error.message);
@@ -80,7 +78,7 @@ const useCryptoData = () => {
     try {
       const data = await apiRequest('/api/binance');
       setBinanceData(data);
-      console.log('✅ 바이낸스 보조 데이터 로드:', data.length);
+      // 로그 제거
     } catch (error) {
       console.error('바이낸스 데이터 가져오기 실패:', error.message);
       setBinanceData([]);
@@ -92,7 +90,7 @@ const useCryptoData = () => {
     try {
       const markets = await apiRequest('/api/upbit/markets');
       setUpbitMarkets(markets);
-      console.log('✅ 업비트 마켓 목록 로드:', markets.length);
+      // 로그 제거
       return markets;
     } catch (error) {
       console.error('업비트 마켓 목록 가져오기 실패:', error.message);
@@ -106,7 +104,6 @@ const useCryptoData = () => {
   const fetchUpbitTicker = async (markets) => {
     try {
       if (!markets || markets.length === 0) {
-        console.log('⚠️ 마켓 목록이 없어서 시세 요청을 건너뜁니다');
         return;
       }
 
@@ -131,9 +128,9 @@ const useCryptoData = () => {
           // 일부 청크 실패해도 계속 진행
         }
         
-        // API 제한을 위해 잠시 대기 (50ms)
+        // API 제한을 위해 잠시 대기 (30ms로 단축)
         if (chunks.length > 1) {
-          await new Promise(resolve => setTimeout(resolve, 50));
+          await new Promise(resolve => setTimeout(resolve, 30));
         }
       }
 
@@ -162,7 +159,7 @@ const useCryptoData = () => {
 
   // 초기 데이터 로딩 (마켓 목록 + 환율)
   const fetchInitialData = async () => {
-    console.log('🔄 초기 데이터 로딩 시작...');
+    // 로그 제거
     setError(null);
     
     try {
