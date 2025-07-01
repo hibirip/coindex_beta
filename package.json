@@ -11,7 +11,9 @@
     "auto-posts": "node gpt-post-generator.js",
     "ai-system": "node gpt-advanced-system.js",
     "community-ai": "node gpt-community-poster.js",
-    "news-analyst": "node gpt-news-analyst.js"
+    "news-analyst": "node gpt-news-analyst.js",
+    "backend": "node proxy-server.cjs",
+    "start": "node proxy-server.cjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.50.2",
