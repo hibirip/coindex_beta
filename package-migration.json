@@ -1,0 +1,57 @@
+{
+  "name": "coindex-migration-tools",
+  "version": "1.0.0",
+  "description": "COINDEX 데이터 마이그레이션 및 뉴스 크롤링 도구",
+  "main": "data-migration.js",
+  "scripts": {
+    "migrate": "node data-migration.js migrate",
+    "migrate:users": "node data-migration.js users",
+    "migrate:posts": "node data-migration.js posts",
+    "migrate:likes": "node data-migration.js likes",
+    "migrate:news": "node data-migration.js news",
+    "migrate:validate": "node data-migration.js validate",
+    "migrate:json": "node data-migration.js json",
+    "news:start": "node news-rss-crawler.js start",
+    "news:once": "node news-rss-crawler.js once",
+    "news:test": "node news-rss-crawler.js test",
+    "news:cleanup": "node news-rss-crawler.js cleanup",
+    "install:all": "npm install && npm run setup",
+    "setup": "echo '🚀 COINDEX 마이그레이션 도구 설정 완료'",
+    "dev": "npm run news:start",
+    "start": "npm run news:start"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "node-cron": "^3.0.3",
+    "rss-parser": "^3.13.0",
+    "axios": "^1.6.2",
+    "cheerio": "^1.0.0-rc.12",
+    "dotenv": "^16.3.1"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.2"
+  },
+  "keywords": [
+    "supabase",
+    "migration",
+    "rss",
+    "crawler",
+    "cryptocurrency",
+    "news",
+    "coindex"
+  ],
+  "author": "COINDEX Team",
+  "license": "MIT",
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/coindex/migration-tools.git"
+  },
+  "bugs": {
+    "url": "https://github.com/coindex/migration-tools/issues"
+  },
+  "homepage": "https://coindex.ai"
+} 
