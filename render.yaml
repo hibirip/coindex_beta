@@ -1,0 +1,24 @@
+services:
+  # 백엔드 서비스
+  - type: web
+    name: coindex-api
+    env: node
+    buildCommand: npm install
+    startCommand: node proxy-server.cjs
+    envVars:
+      - key: NODE_ENV
+        value: production
+
+  # 프론트엔드 서비스  
+  - type: web
+    name: coindex-frontend
+    env: static
+    buildCommand: npm install && npm run build
+    staticPublishPath: ./dist
+    envVars:
+      - key: VITE_API_URL
+        value: https://coindex-beta.onrender.com
+    headers:
+      - path: /*
+        name: X-Frame-Options
+        value: SAMEORIGIN 

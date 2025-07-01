@@ -7,6 +7,7 @@
     "start": "node proxy-server.cjs",
     "dev": "vite",
     "build": "vite build",
+    "build:production": "VITE_API_URL=https://coindex-beta.onrender.com vite build",
     "lint": "eslint .",
     "preview": "vite preview",
     "auto-posts": "node gpt-post-generator.js",
