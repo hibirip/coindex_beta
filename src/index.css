@@ -1,0 +1,145 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* 기본 폰트 및 색상 설정 */
+  body {
+    @apply font-sans antialiased;
+    @apply bg-light-bg text-light-text;
+    @apply transition-colors duration-200;
+  }
+
+  body.dark {
+    @apply bg-dark-bg text-dark-text;
+  }
+
+  /* 스크롤바 스타일 */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-gray-100 dark:bg-gray-800;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary-400 dark:bg-primary-600 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary-500 dark:bg-primary-700;
+  }
+}
+
+@layer components {
+  /* 글래스모피즘 효과 */
+  .glass {
+    @apply backdrop-blur-lg bg-white/70 dark:bg-dark-surface/70;
+    @apply border border-light-border dark:border-dark-border;
+  }
+
+  /* 모던 카드 스타일 */
+  .card-modern {
+    @apply bg-light-card dark:bg-dark-card;
+    @apply border border-light-border dark:border-dark-border;
+    @apply rounded-2xl shadow-soft;
+    @apply transition-all duration-300;
+  }
+
+  .card-modern:hover {
+    @apply shadow-xl -translate-y-1;
+  }
+
+  /* 버튼 스타일 */
+  .btn-primary {
+    @apply px-6 py-2.5 rounded-xl font-medium;
+    @apply bg-gradient-to-r from-primary-500 to-primary-600;
+    @apply text-white shadow-lg shadow-primary-500/25;
+    @apply hover:shadow-xl hover:shadow-primary-500/30;
+    @apply hover:scale-[1.02] active:scale-[0.98];
+    @apply transition-all duration-200;
+  }
+
+  .btn-secondary {
+    @apply px-6 py-2.5 rounded-xl font-medium;
+    @apply bg-light-surface dark:bg-dark-surface;
+    @apply text-primary-600 dark:text-primary-400;
+    @apply border-2 border-primary-500;
+    @apply hover:bg-primary-50 dark:hover:bg-primary-900/20;
+    @apply hover:scale-[1.02] active:scale-[0.98];
+    @apply transition-all duration-200;
+  }
+
+  /* 네비게이션 링크 스타일 */
+  .nav-link {
+    @apply relative px-4 py-2 rounded-lg font-medium;
+    @apply text-light-muted dark:text-dark-muted;
+    @apply hover:text-primary-600 dark:hover:text-primary-400;
+    @apply transition-all duration-200;
+  }
+
+  .nav-link.active {
+    @apply text-primary-600 dark:text-primary-400;
+    @apply bg-primary-50 dark:bg-primary-900/20;
+  }
+
+  .nav-link::after {
+    content: '';
+    @apply absolute bottom-0 left-1/2 -translate-x-1/2;
+    @apply w-0 h-0.5 bg-primary-500;
+    @apply transition-all duration-300;
+  }
+
+  .nav-link:hover::after,
+  .nav-link.active::after {
+    @apply w-3/4;
+  }
+
+  /* 그래디언트 텍스트 */
+  .gradient-text {
+    @apply bg-gradient-to-r from-primary-500 to-primary-700;
+    @apply bg-clip-text text-transparent;
+  }
+
+  /* 애니메이션 배경 */
+  .animated-bg {
+    background: linear-gradient(-45deg, #3b82f6, #60a5fa, #2563eb, #1d4ed8);
+    background-size: 400% 400%;
+    animation: gradient 15s ease infinite;
+  }
+}
+
+@layer utilities {
+  /* 커스텀 유틸리티 클래스 */
+  .text-shadow {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  .text-shadow-dark {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+
+  /* 애니메이션 지연 클래스 */
+  .animation-delay-2000 {
+    animation-delay: 2s;
+  }
+
+  .animation-delay-4000 {
+    animation-delay: 4s;
+  }
+}
+
+/* 키프레임 애니메이션 */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}

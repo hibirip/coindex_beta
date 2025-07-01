@@ -1,0 +1,1180 @@
+🚀 프록시 서버가 http://localhost:4000에서 실행 중입니다
+📊 사용 가능한 엔드포인트:
+   - GET /api/binance (바이낸스 24시간 티커)
+   - GET /api/fx (환율 정보 - 실시간)
+   - POST /api/fx/update (환율 수동 업데이트)
+   - GET /api/fx/status (환율 캐시 상태)
+   - GET /api/upbit?markets=KRW-BTC,KRW-ETH (업비트 티커)
+   - GET /api/upbit/markets (업비트 마켓 목록)
+   - GET /api/coinness-rss (Coinness RSS 프록시)
+   - GET /api/news (새로운 뉴스 API)
+   - POST /api/translate (번역 API)
+🔄 서버 시작 시 초기 환율 업데이트 중...
+✅ 구글 Finance 환율 캐시 갱신: 1354.1501원
+✅ 구글 Finance 환율 캐시 갱신: 1354.1501원
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: read ETIMEDOUT
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: 'read'
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+📰 뉴스 소스 시도: https://feeds.feedburner.com/CoinDesk
+✅ 뉴스 소스 성공: https://feeds.feedburner.com/CoinDesk
+업비트 마켓 API 에러: FetchError: request to https://api.upbit.com/v1/market/all?isDetails=false failed, reason: 
+    at ClientRequest.<anonymous> (file:///Users/heojunseog/Desktop/Cursor/coin-sample/node_modules/node-fetch/src/index.js:108:11)
+    at ClientRequest.emit (node:events:507:28)
+    at emitErrorEvent (node:_http_client:104:11)
+    at TLSSocket.socketErrorListener (node:_http_client:518:5)
+    at TLSSocket.emit (node:events:507:28)
+    at emitErrorNT (node:internal/streams/destroy:170:8)
+    at emitErrorCloseNT (node:internal/streams/destroy:129:3)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21) {
+  type: 'system',
+  errno: 'ETIMEDOUT',
+  code: 'ETIMEDOUT',
+  erroredSysCall: undefined
+}
